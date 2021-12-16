@@ -1,27 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/08 20:08:30 by anrechai          #+#    #+#             */
-/*   Updated: 2021/12/08 20:14:30 by anrechai         ###   ########.fr       */
+/*   Created: 2021/12/14 01:41:00 by anrechai          #+#    #+#             */
+/*   Updated: 2021/12/16 19:04:37 by anrechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c)
+void	ft_putstr(const char *str)
 {
-	write(1, &c, 1);
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	return ;
 }
 
-void	ft_putnbr(int n)
+size_t	ft_strlen(const char *s)
 {
-	long int	nb;
+	size_t	i;
 
-	nb = n;
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
+void	ft_putnbr(long int nb)
+{
 	if (nb >= 0 && nb < 10)
 	{
 		ft_putchar(nb + 48);
@@ -37,4 +52,9 @@ void	ft_putnbr(int n)
 		ft_putnbr(nb / 10);
 		ft_putnbr(nb % 10);
 	}
+}
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
 }

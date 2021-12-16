@@ -6,13 +6,14 @@
 #    By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/08 20:01:46 by anrechai          #+#    #+#              #
-#    Updated: 2021/12/08 20:17:07 by anrechai         ###   ########.fr        #
+#    Updated: 2021/12/16 20:38:43 by anrechai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		=	ft_putchar.c \
-				ft_putstr.c \
-				ft_putnbr.c
+SRCS		=	ft_printf.c \
+				ft_print_it.c \
+				ft_print_it_2.c \
+				ft_utils.c
 
 OBJS		=	${SRCS:.c=.o}
 
